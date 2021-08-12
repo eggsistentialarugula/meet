@@ -1,11 +1,11 @@
 # meet app
 
 # About
-***
+
 A serverless, progress web application built with React using test-drive development technique. This application uses the Google Calendar API to fetch upcoming events.
 
 # Key Features
-***
+
 * Filter events by city
 * Show/hide event details
 * Specify number of events
