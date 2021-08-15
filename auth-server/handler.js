@@ -1,4 +1,6 @@
 const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+const calendar = google.calendar("v3");
 /**
  * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to
  * update the calendar yourself. For more info, check out the SCOPES documentation at this link: https://developers.google.com/identity/protocols/oauth2/scopes
@@ -20,7 +22,7 @@ const credentials = {
   redirect_uris: ["https://eggsistentialarugula.github.io/meet/"],
   javascript_origins: ["https://eggsistentialarugula.github.io", "http://localhost:3000"],
 };
-const { client_secret, client_id, redirect_uris } = credentials;
+const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 const oAuth2Client = new google.auth.OAuth2(
   client_id,
   client_secret,
@@ -34,6 +36,7 @@ const oAuth2Client = new google.auth.OAuth2(
  * as a URL parameter.
  *
  */
+//get AUTH URL
 module.exports.getAuthURL = async () => {
   /**
    *
@@ -58,7 +61,7 @@ module.exports.getAuthURL = async () => {
   };
 };
 
-// get access token 
+// get ACCESS TOKEN
 module.exports.getAccessToken = async (event) => {
   // The values used to instantiate the OAuthClient are at the top of the file
   const oAuth2Client = new google.auth.OAuth2(
@@ -86,11 +89,64 @@ module.exports.getAccessToken = async (event) => {
       // Respond with OAuth token 
       return {
         statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        },
         body: JSON.stringify(token),
       };
     })
     .catch((err) => {
       // Handle error
+      console.error(err);
+      return {
+        statusCode: 500,
+        body: JSON.stringify(err),
+      };
+    });
+};
+
+// GET CALENDAR EVENTS
+module.exports.getCalendarEvents = async (event) => {
+  const oAuth2Client = new google.auth.OAuth2(
+    client_id,
+    client_secret,
+    redirect_uris[0]
+  );
+
+  const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
+
+  // Set the access token as credentials
+  oAuth2Client.setCredentials({ access_token });
+
+  return new Promise((resolve, reject) => {
+
+    calendar.events.list(
+      {
+        calendarId: calendar_id,
+        auth: oAuth2Client,
+        timeMin: new Date().toISOString(),
+        singleEvents: true,
+        orderBy: "startTime",
+      },
+      (error, response) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(response);
+        }
+      }
+    );
+  })
+    .then((results) => {
+      return {
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({ events: results.data.items }),
+      };
+    })
+    .catch((err) => {
       console.error(err);
       return {
         statusCode: 500,
