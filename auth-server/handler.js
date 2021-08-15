@@ -1,13 +1,9 @@
+
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
-/*
- SCOPES allows you to set access levels; this is set to readonly for now because you don't have access rights to update the calendar yourself. SCOPES documentation: https://developers.google.com/identity/protocols/oauth2/scopes
- */
 const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
-/*
- Credentials are those values required to get access to your calendar. If you see “process.env” this means the value is in the “config.json” file. This is a best practice as it keeps your API secrets hidden.
- */
+
 const credentials = {
   client_id: process.env.CLIENT_ID,
   project_id: process.env.PROJECT_ID,
@@ -17,7 +13,7 @@ const credentials = {
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
   redirect_uris: ["https://eggsistentialarugula.github.io/meet/"],
-  javascript_origins: ["https://eggsistentialarugula.github.io", "http://localhost:8080"],
+  javascript_origins: ["https://eggsistentialarugula.github.io", "http://localhost:3000"],
 };
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 const oAuth2Client = new google.auth.OAuth2(
@@ -26,11 +22,9 @@ const oAuth2Client = new google.auth.OAuth2(
   redirect_uris[0]
 );
 
-// GET AUTH URL FUNCTION //
+/* Get AuthUrl */
+
 module.exports.getAuthURL = async () => {
-  /*
-   Scopes array passed to the `scope` option. Any scopes passed must be enabled in the "OAuth consent screen" settings in your project on your Google Console. Also, any passed scopes are the ones users will see when the consent screen is displayed to them.
-   */
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
     scope: SCOPES,
@@ -47,23 +41,17 @@ module.exports.getAuthURL = async () => {
   };
 };
 
-// GET ACCESS TOKEN FUNCTION //
+/* Get Access Token */
+
 module.exports.getAccessToken = async (event) => {
-  // The values used to instantiate the OAuthClient are at the top of the file
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
     redirect_uris[0]
   );
-  // Decode authorization code extracted from the URL query
   const code = decodeURIComponent(`${event.pathParameters.code}`);
 
   return new Promise((resolve, reject) => {
-    /**
-     *  Exchange authorization code for access token with a “callback” after the exchange,
-     *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
-     */
-
     oAuth2Client.getToken(code, (err, token) => {
       if (err) {
         return reject(err);
@@ -72,7 +60,6 @@ module.exports.getAccessToken = async (event) => {
     });
   })
     .then((token) => {
-      // Respond with OAuth token 
       return {
         statusCode: 200,
         headers: {
@@ -90,21 +77,18 @@ module.exports.getAccessToken = async (event) => {
     });
 };
 
-// GET CALENDAR EVENTS FUNCTION //
+/* Get Calendar Events */
+
 module.exports.getCalendarEvents = async (event) => {
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
     redirect_uris[0]
   );
-
   const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
-
-  // Set the access token as credentials
   oAuth2Client.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
-
     calendar.events.list(
       {
         calendarId: calendar_id,
