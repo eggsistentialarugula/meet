@@ -27,7 +27,7 @@
         <button id="getURL">Get OAuth URL</button>
         <p id="result"></p>
         <a id="authURL" href target="_blank">Click to authorize</a>
-        <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
+        <!-- Step 2 -->
 
         <h4>Step 2: Get your code and exchange for an access token</h4>
         <p>
@@ -84,6 +84,7 @@
                 code = encodeURIComponent(codeValue.value);
             }
             const getTokenRequest = getToken + "/" + code;
+            console.log('token request ' + getTokenRequest);
             fetch(getTokenRequest)
                 .then(function (response) {
                     return response.json();
@@ -93,7 +94,7 @@
                 });
         };
         // --------------------- END OF STEP 2
-        // -- STEP 3
+        // STEP 3
         const getEvents = document.getElementById("getEvents");
         const events = document.getElementById("events");
         const getCalendarEvents = "https://gk2jlemf4g.execute-api.us-west-1.amazonaws.com/dev/api/get-events";
@@ -109,7 +110,7 @@
                     events.innerText = JSON.stringify(json, null, 2);
                 });
         };
-      // -- END OF STEP 3
+      // END OF STEP 3
 
     </script>
 </body>
