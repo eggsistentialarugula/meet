@@ -5,6 +5,6 @@ jspm_packages
 # Serverless directories
 .serverless
 
-#environmental variables
+# environment variable
 config.json
 node_modules
