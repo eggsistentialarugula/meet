@@ -14,7 +14,6 @@ A serverless, progress web application built with React using test-drive develop
 * View a chart showing the number of upcoming events by city
 
 ## FEATURE 1: FILTER EVENTS BY CITY
-***
 ### AS A USER, I SHOULD BE ABLE TO FILTER EVENTS BY CITY SO I CAN SEE A LIST OF EVENTS THAT ARE TAKING PLACE IN THAT CITY
 
 Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
@@ -33,7 +32,6 @@ Scenario 3: User can select a city from the suggested list.
 * Then their city would be changed to that city and the user should receive a list of upcoming events in that city.
 
 ## FEATURE 2: SHOW/HIDE AN EVENT’S DETAILS
-***
 ### AS A USER, I SHOULD BE ABLE TO SHOW AND HIDE DETAILS OF ANY EVENT SO THAT I CAN SEE MORE OR LESS INFO ABOUT AN EVENT
 
 Scenario 1: An event element is collapsed by default.
@@ -52,7 +50,6 @@ Scenario 3: User can collapse an event to hide its details.
 * Then the event details should collapse and the user should not be able to see the event details anymore
 
 ## FEATURE 3: SPECIFY NUMBER OF EVENTS
-***
 ### AS A USER, I WOULD LIKE TO HAVE THE OPTION TO SPECIFY THE NUMBER OF EVENTS I WANT TO VIEW IN THE APP SO I CAN EITHER VIEW MORE OR LESS EVENTS.
 
 Scenario 1: When user hasn’t specified a number, 32 is the default number.
@@ -66,7 +63,6 @@ Scenario 2: User can change the number of events they want to see.
 * Then they should be able to specifically choose how many events they want to see
 
 ## FEATURE 4: USE THE APP WHEN OFFLINE
-***
 ### AS A USER I WOULD LIKE TO BE ABLE TO USE THE APP WHEN OFFLINE SO THAT I CAN SEE THE EVENTS I VIEWED THE LAST TIME I WAS ONLINE
 
 Scenario 1: Show cached data when there’s no internet connection.
@@ -80,7 +76,6 @@ Scenario 2: Show error when user changes the settings (city, time range).
 * Then the user shouldn’t be able to see the events and an error message will display
 
 ## FEATURE 5: DATA VISUALIZATION
-***
 ### AS A USER I WOULD LIKE TO BE ABLE TO SEE A CHART SHOWING THE UPCOMING EVENTS IN EACH CITY SO THAT I KNOW WHAT EVENTS ARE ORGANIZED IN WHICH CITY
 
 Scenario 1: Show a chart with the number of upcoming events in each city.
