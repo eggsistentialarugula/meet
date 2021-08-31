@@ -1,38 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding:2% 5%;
+  background-color: rgb(44,51,60);
   min-height: 100vh;
-  display: flex;
+}
+
+.App *{
+  box-sizing: border-box;
+}
+
+ul{
+  padding:0;
+  list-style:none;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 8px 6px 8px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 20px;
+  align-self: center;
+  height: 38px;
+}
+.city{
+  width:250px;
+}
+
+.CitySearch{
+  display:flex;
   flex-direction: column;
-  align-items: center;
+  flex-basis: 300px;
+  max-width:300px;
+  margin:auto;
+  position:relative;
+}
+.showSuggestions{
+  display:block;
+}
+.suggestions > li {
+  text-align: left;
+  padding: 8px 6px 8px 10px;
+  background-color: rgb(56,66,76);
+  color:rgb(162,100,50);
+  cursor: pointer;
+}
+.suggestions > li:hover{
+  color:rgb(30,194,252);
+}
+.numberOfEvents{
+  padding:20px 0;
+}
+.numEvents-label{
+  color:rgb(44,179,225);
+}
+
+input.eventStateNum{
+  margin-top:20px;
+}
+
+.EventList{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.event-container{
+  color: rgb(201,207,203);
+  padding:40px;
 }
 
-@keyframes App-logo-spin {
+.event-title{
+  color: rgb(234,161,40);
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 5px;
+}
+
+.event-details{
+  -webkit-animation: aniCollapse 0.6s; /* Safari 4+ */
+  -moz-animation:    aniCollapse 0.6s; /* Fx 5+ */
+  -o-animation:      aniCollapse 0.6s; /* Opera 12+ */
+  animation:         aniCollapse 0.6s; /* IE 10+, Fx 29+ */
+  color: rgb(53,194,213);
+}
+
+@-webkit-keyframes aniCollapse {
   from {
+    opacity:0;
     transform: rotate(0deg);
   }
   to {
+    opacity:1;
     transform: rotate(360deg);
+  }
+}
+@-moz-keyframes aniCollapse {
+  from {
+    opacity:0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity:1;
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes aniCollapse {
+  from {
+    opacity:0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity:1;
+    transform: rotate(360deg);
+  }
+}
+@keyframes aniCollapse {
+  from {
+    opacity:0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity:1;
+    transform: rotate(360deg);
+  }
+}
+
+button.toggle-button{
+  cursor: pointer;
+  padding:7px;
+  font-size:1rem;
+  background-color:rgba(0,0,0,0);
+  border-color:rgb(234,161,40);
+  border-radius: 5px;
+  color:rgb(234,161,40);
+  transition:0.6s ease-in; 
+}
+
+button.toggle-button:hover{
+  border-color:rgb(44,179,225);
+  color:rgb(53,194,213);
+}
+
+@media only screen and (min-width: 992px) {
+  .data-vis-wrapper {
+    flex-direction: row;
+  }
+  .data-vis-wrapper .recharts-responsive-container {
+    flex-basis: 50%;
+    max-width: 50%;
+    min-width: auto;
+    margin: 0 auto;
   }
 }
