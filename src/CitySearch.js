@@ -5,18 +5,29 @@ class CitySearch extends Component {
     state = {
         query: '',
         suggestions: [],
-        showSuggestions: undefined,
+        showSuggestions: false,
+        infoText: '',
     }
 
     handleInputChanged = (event) => {
         const value = event.target.value;
+        this.setState({ showSuggestions: true });
         const suggestions = this.props.locations.filter((location) => {
             return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         });
-        this.setState({
-            query: value,
-            suggestions,
-        });
+
+        if (suggestions.length === 0) {
+            this.setState({
+                query: value,
+                infoText: `There are no matches for ${value}. Try again.`
+            });
+        } else {
+            this.setState({
+                query: value,
+                suggestions,
+                infoText: ''
+            });
+        }
     };
 
     handleItemClicked = (suggestion) => {

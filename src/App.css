@@ -58,7 +58,7 @@ input[type="number"] {
   color:rgb(44,179,225);
 }
 
-input.eventStateNum{
+input.event-number-input{
   margin-top:20px;
 }
 
