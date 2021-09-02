@@ -89,3 +89,10 @@ const getToken = async (code) => {
 
     return access_token;
 };
+
+export const numFilter = (events, num) => {
+    if (num === 0) {
+        return events.slice(0, 32);
+    }
+    return events.slice(0, num);
+}
