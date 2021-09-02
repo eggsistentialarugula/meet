@@ -53,20 +53,20 @@ describe('<App /> integration', () => {
     });
 
     // filter list of events that match the city the user selected
-    // test('get list of events matching the city selected by the user', async () => {
-    //     const AppWrapper = mount(<App />);
-    //     const CitySearchWrapper = AppWrapper.find(CitySearch);
-    //     const locations = extractLocations(mockData);
-    //     CitySearchWrapper.setState({ suggestions: locations });
-    //     const suggestions = CitySearchWrapper.state('suggestions');
-    //     const selectedIndex = Math.floor(Math.random() * (suggestions.length));
-    //     const selectedCity = suggestions[selectedIndex];
-    //     await CitySearchWrapper.instance().handleItemClicked(selectedCity);
-    //     const allEvents = await getEvents();
-    //     const eventsToShow = allEvents.filter(event => event.location === selectedCity);
-    //     expect(AppWrapper.state('events')).toEqual(eventsToShow);
-    //     AppWrapper.unmount();
-    // });
+    test('get list of events matching the city selected by the user', async () => {
+        const AppWrapper = mount(<App />);
+        const CitySearchWrapper = AppWrapper.find(CitySearch);
+        const locations = extractLocations(mockData);
+        CitySearchWrapper.setState({ suggestions: locations });
+        const suggestions = CitySearchWrapper.state('suggestions');
+        const selectedIndex = Math.floor(Math.random() * (suggestions.length));
+        const selectedCity = suggestions[selectedIndex];
+        await CitySearchWrapper.instance().handleItemClicked(selectedCity);
+        const allEvents = await getEvents();
+        const eventsToShow = allEvents.filter(event => event.location === selectedCity);
+        expect(AppWrapper.state('events')).toEqual(eventsToShow);
+        AppWrapper.unmount();
+    });
 
     // show all events when selected 'see all cities'
     test('get list of all events when user selects "See all cities"', async () => {
