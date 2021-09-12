@@ -1,9 +1,7 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import App from '../App';
 import { mockData } from '../mock-data';
-import CitySearch from '../CitySearch'
-import { extractLocations } from '../api';
 
 import { loadFeature, defineFeature } from 'jest-cucumber'; //built-in functions from jest-cucumber - loadFeature() is used to load a Gherkin file and defineFeature() is used to define the code for that file
 import NumberOfEvents from '../NumberOfEvents';
