@@ -2,7 +2,8 @@
 .App {
   text-align: center;
   padding:2% 5%;
-  background-color: rgb(44,51,60);
+  background: rgb(44,51,60);
+  background: linear-gradient(0deg, rgba(44,51,60,1) 82%, rgba(44,51,60,0.8183648459383753) 100%);
   min-height: 100vh;
 }
 
@@ -11,7 +12,7 @@
 }
 
 span.event-title{
-  font-size:2rem;
+  font-size:2.3rem;
 }
 span.event-location{
   display:inline-block;
@@ -72,6 +73,10 @@ input[type="number"] {
 input.event-number-input{
   margin-top:20px;
 }
+
+/* li.EventItem{
+  border:10px solid black;
+} */
 
 .EventList{
   display:flex;
@@ -185,5 +190,11 @@ button.toggle-button:hover{
   span.creator-email{
     margin: 10px;
     font-size:10px;
+  }
+}
+
+@media(min-width: 500px) and (max-width: 750px){
+  span.event-title{
+    font-size: 1.7rem !important;
   }
 }
