@@ -10,6 +10,17 @@
   box-sizing: border-box;
 }
 
+span.event-title{
+  font-size:2rem;
+}
+span.event-location{
+  display:inline-block;
+  margin-bottom:15px;
+}
+span.event-time{
+  display:inline-block;
+  margin-bottom: 5px;
+}
 ul{
   padding:0;
   list-style:none;
@@ -129,7 +140,13 @@ input.event-number-input{
   }
 }
 
+span.event-description{
+  display:inline-block;
+  margin-bottom: 20px;
+}
+
 button.toggle-button{
+  margin-bottom: 10px;
   cursor: pointer;
   padding:7px;
   font-size:1rem;
@@ -154,5 +171,19 @@ button.toggle-button:hover{
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px){
+  span.event-title{
+    font-size: 1.2rem !important;
+  }
+  span.event-description{
+    margin:10px;
+    width:80%;
+  }
+  span.creator-email{
+    margin: 10px;
+    font-size:10px;
   }
 }

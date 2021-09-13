@@ -20,9 +20,12 @@ class Event extends Component {
         return (
             <div className="event-container">
                 <div className="event-overview">
-                    <h1 className="event-title">{event.summary}</h1>
-                    <h2 className="event-location">{event.location}</h2>
-                    <h3 className="event-time">From {event.start.dateTime} to {event.end.dateTime}</h3>
+                    <span className="event-title">{event.summary}</span>
+                    <br></br>
+                    <span className="event-location">{event.location}</span>
+                    <br></br>
+                    <span className="event-time">From {event.start.dateTime} to {event.end.dateTime}</span>
+                    <br></br>
                     {!showDetails && (
                         <button className="toggle-button" onClick={this.toggleVisibility}>
                             Show Details
@@ -37,8 +40,9 @@ class Event extends Component {
 
                 {showDetails && (
                     <div className="event-details">
-                        <p className="event-description">{event.description}</p>
-                        <p className="creator-email">{event.creator.email}</p>
+                        <span className="event-description">{event.description}</span>
+                        <br></br>
+                        <span className="creator-email">{event.creator.email}</span>
                     </div>
                 )}
             </div>
