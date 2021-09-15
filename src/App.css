@@ -74,9 +74,17 @@ input.event-number-input{
   margin-top:20px;
 }
 
-/* li.EventItem{
-  border:10px solid black;
-} */
+li.EventItem{
+  margin:10px;
+  box-shadow: inset 2px 2px 20px 20px rgba(0,0,0,0.5);
+  background-image: linear-gradient(to left, rgba(0,0,0,0.3) 0%, rgba(62,188,213, 0.2) 50%,rgba(75,81,89, 0.7) 74%);
+  background-size:200%;
+  transition:.6s;
+}
+li.EventItem:hover{
+  background-position:right;
+  box-shadow: 2px 2px 20px 20px rgba(0,0,0,0.5);
+}
 
 .EventList{
   display:flex;
@@ -91,7 +99,8 @@ input.event-number-input{
 }
 
 .event-title{
-  color: rgb(234,161,40);
+  -webkit-text-stroke: 1px rgb(204, 136, 28);
+  color: rgba(234,161,40,0);
   font-family: 'Press Start 2P', cursive;
   margin-bottom: 5px;
 }
