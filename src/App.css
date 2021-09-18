@@ -72,6 +72,7 @@ input[type="number"] {
 
 input.event-number-input{
   margin-top:20px;
+  width:60px;
 }
 
 li.EventItem{
@@ -99,7 +100,7 @@ li.EventItem:hover{
 }
 
 .event-title{
-  -webkit-text-stroke: 1px rgb(204, 136, 28);
+  -webkit-text-stroke: 1px rgb(221, 149, 32);
   color: rgba(234,161,40,0);
   font-family: 'Press Start 2P', cursive;
   margin-bottom: 5px;
