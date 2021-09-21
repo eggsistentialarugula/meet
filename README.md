@@ -2,7 +2,11 @@
 
 # About
 
-A serverless, progress web application built with React using test-drive development technique. This application uses the Google Calendar API to fetch upcoming events.
+A serverless, progressive web application built with React using test-drive development technique. This application uses the Google Calendar API to fetch upcoming CareerFoundry events.
+
+This web application will allow users to view fictional upcoming events pulled from Google Calendars API. Events can be filtered by city, has visual data updates, and allows the user to set the number of displayed events. Meet App is a progressive web app, or PWA, and allows users to use the app while offline and to add it to their phone's home screen.
+
+This app was created using Unit Testing, Integration Testing, User Acceptance and End-to-End testing with Atatus. 
 
 # Key Features
 
