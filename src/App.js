@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import "./nprogress.css";
-
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+import { NetworkAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -54,6 +54,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />

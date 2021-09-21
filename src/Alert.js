@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { canConstructResponseFromBodyStream } from 'workbox-core/_private';
 
 class Alert extends Component {
     constructor(props) {
@@ -35,4 +36,11 @@ class ErrorAlert extends Alert {
     }
 }
 
-export { InfoAlert, ErrorAlert }
+class NetworkAlert extends Alert {
+    constructor(props) {
+        super(props);
+        this.color = '#61ffca';
+    }
+}
+
+export { InfoAlert, ErrorAlert, NetworkAlert }
