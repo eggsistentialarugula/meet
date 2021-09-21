@@ -50,6 +50,14 @@ input[type="number"] {
   margin:auto;
   position:relative;
 }
+.searchCity-title{
+  font-size: 1.2rem;
+  padding:5px;
+  letter-spacing: 0.2rem;
+  -webkit-text-stroke: .5px rgb(0, 238, 255);
+  color: rgb(50,77,89);
+  font-family: 'Press Start 2P', cursive;
+}
 .showSuggestions{
   display:block;
 }
