@@ -54,7 +54,7 @@ input[type="number"] {
   font-size: 1.2rem;
   padding:5px;
   letter-spacing: 0.2rem;
-  -webkit-text-stroke: .5px rgb(0, 238, 255);
+  -webkit-text-stroke: .5px rgb(243, 169, 50);
   color: rgb(50,77,89);
   font-family: 'Press Start 2P', cursive;
 }

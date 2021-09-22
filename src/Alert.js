@@ -39,7 +39,7 @@ class ErrorAlert extends Alert {
 class NetworkAlert extends Alert {
     constructor(props) {
         super(props);
-        this.color = '#61ffca';
+        this.color = '#6eeeff';
     }
 }
 
