@@ -2,12 +2,13 @@
 .App {
   text-align: center;
   padding:2% 5%;
-  min-height: 100vh;
   background-blend-mode:lighten;
   background-image:url(./img/code2.jpg), linear-gradient(to right, rgb(43, 26, 56), rgb(75, 57, 36));
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
+  position: absolute;
+  background-size:100%;
 }
 
 .App *{
