@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { canConstructResponseFromBodyStream } from 'workbox-core/_private';
 
 class Alert extends Component {
     constructor(props) {
