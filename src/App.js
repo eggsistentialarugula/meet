@@ -55,9 +55,12 @@ class App extends Component {
     return (
       <div className="App">
         {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
+        <div className="AppBg">
+          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+          <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
+          <EventList events={this.state.events} />
+        </div>
+
       </div>
     );
   }
