@@ -15,7 +15,7 @@
 }
 
 span.event-title{
-  font-size:5rem;
+  font-size:2.3rem;
 }
 span.event-location{
   display:inline-block;
@@ -126,7 +126,7 @@ li.EventItem:hover{
   -moz-animation:    aniCollapse 0.6s; /* Fx 5+ */
   -o-animation:      aniCollapse 0.6s; /* Opera 12+ */
   animation:         aniCollapse 0.6s; /* IE 10+, Fx 29+ */
-  color: rgb(193, 248, 255);
+  color: rgb(53,194,213);
 }
 
 @-webkit-keyframes aniCollapse {
