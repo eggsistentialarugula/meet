@@ -3,6 +3,7 @@
   text-align: center;
   padding:2% 5%;
   background-blend-mode:lighten;
+  background-color: black;
   background-image:url(./img/code2.jpg), linear-gradient(to right, rgb(43, 26, 56), rgb(75, 57, 36));
   background-position: top center;
   background-repeat: no-repeat;
