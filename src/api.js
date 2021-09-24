@@ -2,7 +2,7 @@ import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
-export const extractLocations = (events) => {
+const extractLocations = (events) => {
     var extractLocations = events.map((event) => event.location);
     var locations = [...new Set(extractLocations)];
     return locations;
@@ -18,7 +18,7 @@ const checkToken = async (accessToken) => {
     return result;
 };
 
-export const getEvents = async () => {
+const getEvents = async () => {
     NProgress.start();
 
     if (window.location.href.startsWith('http://localhost')) {
@@ -48,7 +48,7 @@ export const getEvents = async () => {
     }
 };
 
-export const getAccessToken = async () => {
+const getAccessToken = async () => {
     const accessToken = localStorage.getItem('access_token');
     const tokenCheck = accessToken && (await checkToken(accessToken));
 
@@ -104,3 +104,5 @@ export const numFilter = (events, num) => {
     }
     return events.slice(0, num);
 }
+
+export { getEvents, getAccessToken, extractLocations, getToken, checkToken };
