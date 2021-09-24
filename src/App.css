@@ -102,6 +102,7 @@ input[type="number"] {
   padding:20px 0;
 }
 .numEvents-label{
+  font-family: 'Philosopher', sans-serif;
   color:rgb(53,194,213);
   letter-spacing: .1rem;
   font-weight:700;
@@ -161,6 +162,7 @@ li.EventItem:hover{
   -webkit-animation: aniCollapse 0.6s; /* Safari 4+ */ /* Fx 5+ */ /* Opera 12+ */
   animation:         aniCollapse 0.6s; /* IE 10+, Fx 29+ */
   color: rgb(53,194,213);
+  font-family: 'Philosopher', sans-serif;
 }
 
 @-webkit-keyframes aniCollapse {
