@@ -158,10 +158,14 @@ li.EventItem:hover{
   margin-bottom: 5px;
 }
 
+.event-location{
+  color:azure;
+}
+
 .event-details{
   -webkit-animation: aniCollapse 0.6s; /* Safari 4+ */ /* Fx 5+ */ /* Opera 12+ */
   animation:         aniCollapse 0.6s; /* IE 10+, Fx 29+ */
-  color: rgb(53,194,213);
+  color:aliceblue;
   font-family: 'Philosopher', sans-serif;
 }
 
