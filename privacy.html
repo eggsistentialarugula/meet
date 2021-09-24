@@ -6,12 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meet App Privacy Policy</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital@1&display=swap');
+
+    .bg {
+      position: fixed;
+      top: 0;
+      transform: translateX(-20%);
+      opacity: 0.1;
+      height: 700px;
+      margin-top: 50px;
+      width: 100%;
+      background-image: url(../src/img/map.jpg);
+      background-position: center;
+      background-position-x: -150px;
+      z-index: -1;
+    }
+
     body {
-      background: rgb(44, 51, 60);
-      background: linear-gradient(0deg, rgba(44, 51, 60, 1) 82%, rgba(44, 51, 60, 0.8183648459383753) 100%);
-      color: rgb(53, 194, 213);
-      font-family: Verdana, sans-serif;
+      font-family: 'Philosopher', sans-serif;
       font-size: 0.8em;
+      color: aliceblue;
+      background-image: linear-gradient(to right, rgb(43, 26, 56), rgb(75, 57, 36));
+      ;
+      width: 60%;
+      margin: auto;
+      margin-top: 10%;
     }
 
     header,
@@ -21,6 +40,16 @@
     footer {
       margin: 5px;
       padding: 8px;
+    }
+
+    header {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 20px;
+      font-style: italic;
     }
 
     nav ul {
