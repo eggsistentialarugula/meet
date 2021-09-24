@@ -81,8 +81,8 @@ input[type="number"] {
   font-size: 1.3rem;
   padding:5px;
   letter-spacing: 0.2rem;
-  -webkit-text-stroke: .55px rgb(177, 85, 0);
-  color: rgba(255, 255, 255, 0.836);
+  -webkit-text-stroke: .55px rgb(255, 255, 255);
+  color: black;
   font-family: 'Press Start 2P', cursive;
 }
 .showSuggestions{
