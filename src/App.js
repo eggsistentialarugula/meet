@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import "./nprogress.css";
 import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
@@ -92,7 +92,7 @@ class App extends Component {
           <XAxis type="category" dataKey="city" name="city" />
           <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter data={this.getData()} fill="#8884d8" />
+          <Scatter data={this.getData()} fill="#b3ecff" />
         </ScatterChart>
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
