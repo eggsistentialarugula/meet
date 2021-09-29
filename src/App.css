@@ -194,6 +194,10 @@ li.EventItem:hover{
   }
 }
 
+.scatterChart h4{
+  color:rgb(221, 149, 32);
+}
+
 span.event-description{
   display:inline-block;
   margin-bottom: 20px;
