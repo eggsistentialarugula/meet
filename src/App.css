@@ -194,13 +194,12 @@ li.EventItem:hover{
   }
 }
 
+.scatterChart{
+  background-color: rgba(0,0,0,0.5);
+}
 .scatterChart h4{
   font-family: 'Philosopher', sans-serif;
   color:rgb(221, 149, 32);
-}
-
-text.recharts-text.recharts-cartesian-axis-tick-value{
-  color:aqua;
 }
 
 span.event-description{
