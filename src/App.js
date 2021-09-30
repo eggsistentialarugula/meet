@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
-import "./nprogress.css";
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
@@ -8,6 +6,8 @@ import WelcomeScreen from './WelcomeScreen';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import { NetworkAlert } from './Alert';
 
+import './App.css';
+import "./nprogress.css";
 class App extends Component {
   state = {
     events: [],
@@ -38,27 +38,25 @@ class App extends Component {
   }
 
   updateEvents = (location, eventCount) => {
-    const { currentLocation, numberOfEvents } = this.state;
-    if (location) {
-      getEvents().then((events) => {
-        const locationEvents = location === 'all' ? events : events.filter((event) => event.location === location);
-        const filteredEvents = locationEvents.slice(0, numberOfEvents);
-        this.setState({
-          events: filteredEvents,
-          currentLocation: location,
-        });
+    getEvents().then((events) => {
+      let locationEvents = (location === 'all') ?
+        events :
+        events.filter((event) => event.location === location);
+      locationEvents = locationEvents.slice(0, eventCount)
+      this.setState({
+        events: locationEvents,
+        currentLocation: location
       });
-    } else {
-      getEvents().then((events) => {
-        const locationEvents = currentLocation === 'all' ? events : events.filter((event) => event.location === currentLocation);
-        const filteredEvents = locationEvents.slice(0, eventCount);
-        this.setState({
-          events: filteredEvents,
-          numberOfEvents: eventCount,
-        });
-      });
-    }
+    });
   }
+
+  updateEventCount = (eventCount) => {
+    this.setState({
+      numberOfEvents: eventCount
+    });
+    const { currentLocation } = this.state;
+    this.updateEvents(currentLocation, eventCount);
+  };
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
@@ -66,7 +64,7 @@ class App extends Component {
       <div className="App">
         {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
+        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventCount={(e) => this.updateEventCount(e)} />
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
       </div>
