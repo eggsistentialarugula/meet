@@ -195,7 +195,10 @@ li.EventItem:hover{
 }
 
 .scatterChart{
-  background-color: rgba(0,0,0,0.5);
+  position:relative;
+  z-index: 999;
+  margin:auto;
+  
 }
 .scatterChart h4{
   font-family: 'Philosopher', sans-serif;
