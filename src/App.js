@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import "./nprogress.css";
-import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
-} from 'recharts';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
@@ -40,16 +37,6 @@ class App extends Component {
     this.mounted = false;
   }
 
-  getData = () => {
-    const { locations, events } = this.state;
-    const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location).length
-      const city = location.split(', ').shift()
-      return { city, number };
-    })
-    return data;
-  };
-
   updateEvents = (location, eventCount) => {
     const { currentLocation, numberOfEvents } = this.state;
     if (location) {
@@ -80,23 +67,6 @@ class App extends Component {
         {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
-
-        <div className="scatterChart">
-          <h4>Events in each city</h4>
-          <ScatterChart
-            width={2000}
-            height={400}
-            margin={{
-              top: 20, right: 20, bottom: 20, left: 20,
-            }}>
-            <CartesianGrid />
-            <XAxis type="category" dataKey="city" name="city" />
-            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#b3ecff" />
-          </ScatterChart>
-        </div>
-
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
       </div>
@@ -105,3 +75,4 @@ class App extends Component {
 }
 
 export default App;
+© 2021 GitHub, Inc.
