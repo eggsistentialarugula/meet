@@ -33,7 +33,7 @@ class NumberOfEvents extends React.Component {
                     type="number"
                     className="event-number-input"
                     value={this.state.numberOfEvents}
-                    onChange={(e) => this.handleInputChange(e.target.value)}
+                    onChange={this.handleInputChange}
                 />
                 <ErrorAlert text={this.state.infoText} />
             </div>
