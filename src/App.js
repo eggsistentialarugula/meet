@@ -74,7 +74,6 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
-    const { events } = this.state;
     return (
       <div className="App">
         {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
@@ -83,7 +82,7 @@ class App extends Component {
         <h4>Events in each city</h4>
 
         <div className="data-vis-wrapper">
-          <EventGenre events={events} />
+          <EventGenre events={this.state.events} />
           <ResponsiveContainer height={400}>
             <ScatterChart margin={{
               top: 20, right: 20, bottom: 20, left: 20,
