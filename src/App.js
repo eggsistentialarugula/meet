@@ -37,25 +37,26 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
+      let locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      const { numberOfEvents } = this.state;
+      locationEvents = locationEvents.slice(0, eventCount)
       this.setState({
-        events: locationEvents.slice(0, numberOfEvents)
+        events: locationEvents,
+        currentLocation: location
       });
     });
   }
 
   updateEventCount = (eventCount) => {
-    const { currentLocation } = this.state;
     this.setState({
       numberOfEvents: eventCount
     });
+    const { currentLocation } = this.state;
     this.updateEvents(currentLocation, eventCount);
-  }
+  };
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
