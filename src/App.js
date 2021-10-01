@@ -9,7 +9,7 @@ import { NetworkAlert } from './Alert';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
-// import './App.css';
+import './App.css';
 import "./nprogress.css";
 
 class App extends Component {
