@@ -38,7 +38,7 @@ h1{
   animation:left_to_right 3s ease-in-out;
 }
 h4{
-  animation: rotate_from_corner 5s ease-in-out;
+  animation: rotate_from_corner 4s ease-in-out;
 }
 img.google-icon{
   animation: rotate_from_corner 8s ease-in-out;
