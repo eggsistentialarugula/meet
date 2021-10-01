@@ -16,23 +16,23 @@ const EventGenre = ({ events }) => {
         return data;
     };
 
-    const colors = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
+    const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
     return (
-        <ResponsiveContainer height={400} >
-            <PieChart>
+        <ResponsiveContainer width="100%" height="100%">
+            <PieChart width={400} height={400}>
                 <Pie
                     data={data}
                     cx={200}
                     cy={200}
-                    labelLine={true}
+                    labelLine={false}
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
                     label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
                     {
                         data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={colors[index]} />
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} name={entry.name} />
                         ))
                     }
                 </Pie>
