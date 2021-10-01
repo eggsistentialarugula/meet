@@ -24,14 +24,14 @@
 }
 
 @keyframes animate{
-  0%{background-blend-mode:soft-light; background-position: 0 0; background-image:url(./img/world-map.png), linear-gradient(to right, rgb(51, 56, 61), rgb(122, 214, 250), white);}
-  /* 20%{background-blend-mode:overlay;} */
-  25%{background-blend-mode:saturation; transform: scale(1.2);}
+  0%{background-blend-mode:soft-light; background-position: 0 0; transform: scale(1.1);background-image:url(./img/world-map.png), linear-gradient(to right, rgb(51, 56, 61), rgb(122, 214, 250), white);}
+  20%{background-blend-mode:overlay;}
+  25%{background-blend-mode:saturation; }
   /* 80%{background-blend-mode:lighten ;} */
   /* 80%{background-blend-mode: color-dodge;} */
-  35%{background-blend-mode:color-dodge;transform-color: scale(1.3); background-image:url(./img/world-map.png), linear-gradient(to right, rgb(48, 38, 56), rgb(122, 214, 250), white);}
-  /* 45%{background-blend-mode:screen; } */
-  100%{background-blend-mode:screen;background-position: 100% 0; transform-scale:scale(1.2); background-image:url(./img/world-map.png), linear-gradient(to right, rgb(95, 81, 105), rgb(122, 214, 250), white);}
+  35%{background-blend-mode:color-dodge; background-image:url(./img/world-map.png), linear-gradient(to right, rgb(48, 38, 56), rgb(122, 214, 250), white);}
+  75%{background-blend-mode:screen; }
+  100%{background-blend-mode:screen; transform: scale(1.2); background-position: 100% 0; background-image:url(./img/world-map.png), linear-gradient(to right, rgb(95, 81, 105), rgb(122, 214, 250), white);}
 }
 
 h1{
@@ -138,4 +138,13 @@ img.google-icon{
 
 .spots{
   position: absolute;
+}
+
+@media (max-width: 500px){
+  .WelcomeScreen h1{
+    font-size: 1.5rem !important;
+  }
+  .WelcomeScreen h4{
+    font-size: 1rem !important;
+  }
 }
