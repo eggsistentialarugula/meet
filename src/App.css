@@ -35,7 +35,18 @@
   color:aliceblue;
   font-family: 'Philosopher', sans-serif;
 }
-
+.data-vis-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.data-vis-wrapper .recharts-responsive-container {
+  min-width: 100%;
+  display: flex;
+}
+.recharts-surface {
+  overflow: visible;
+}
 span.event-title{
   font-size:2.3rem;
 }
