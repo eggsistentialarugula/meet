@@ -1,10 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import {
     PieChart, Pie, Cell, ResponsiveContainer
 } from 'recharts';
 
 const EventGenre = ({ events }) => {
+    useEffect(() => { setData(() => getData()); }, [events]);
+    const [data, setData] = useState([]);
 
     const getData = () => {
         const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
@@ -14,8 +15,7 @@ const EventGenre = ({ events }) => {
         });
         return data;
     };
-    useEffect(() => { setData(() => getData()); }, [events]);
-    const [data, setData] = useState([]);
+
     const COLORS = ['#4CC9F0', '#F72585', '#3A0CA3', '#4361EE', '#7209B7'];
 
     return (
