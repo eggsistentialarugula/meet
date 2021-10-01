@@ -4,19 +4,17 @@ import { ErrorAlert } from './Alert'
 class NumberOfEvents extends React.Component {
     state = {
         numberOfEvents: 32,
+        infoText: '',
     };
 
-    handleInputChange = (event) => {
-        const value = event.target.value;
-        this.setState({
-            numberOfEvents: value,
-        });
-        if (value < 1 || value > 32) {
-            this.setState({
+    handleInputChange = (eventCount) => {
+        if (eventCount < 1 || eventCount > 32) {
+            return this.setState({
                 infoText: 'Please enter a number between 1 and 32',
             });
         } else {
             this.setState({
+                numberOfEvents: eventCount,
                 infoText: ''
             })
         }
