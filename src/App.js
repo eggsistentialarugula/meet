@@ -74,7 +74,7 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
-    const { locations, numberOfEvents, events } = this.state;
+    const { events } = this.state;
     return (
       <div className="App">
         {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
