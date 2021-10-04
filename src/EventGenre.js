@@ -4,8 +4,11 @@ import {
 } from 'recharts';
 
 const EventGenre = ({ events }) => {
-    useEffect(() => { setData(() => getData()); }, [events]);
     const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setData(() => getData());
+    }, [events]);
 
     const getData = () => {
         const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
@@ -29,10 +32,15 @@ const EventGenre = ({ events }) => {
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+                    label={({ name, percent }) => `
+                    ${name} ${(percent * 100).toFixed(0)}%`
+                    }>
                     {
                         data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} name={entry.name} />
+                            <Cell
+                                key={`cell-${index}`}
+                                fill={COLORS[index % COLORS.length]}
+                                name={entry.name} />
                         ))
                     }
                 </Pie>
