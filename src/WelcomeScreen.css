@@ -140,11 +140,19 @@ img.google-icon{
   position: absolute;
 }
 
-@media (max-width: 500px){
+@media (max-width: 975px){
   .WelcomeScreen h1{
     font-size: 1.5rem !important;
+    margin-right:20px;
   }
   .WelcomeScreen h4{
+    margin-right:20px;
     font-size: 1rem !important;
   }
+  .google-btn{
+    width:150px;
+    height:40px;
+    margin-right:20px;
+  }
+
 }
