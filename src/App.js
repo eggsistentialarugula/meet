@@ -52,6 +52,12 @@ class App extends Component {
             locations: extractLocations(events)
           })
         }
+        if (!navigator.onLine) {
+          this.setState({ networkText: <div>'Network error - the events you are viewing may be out of date. Connect to the internet to view updated information.'</div> });
+          console.log("OFFLINE mode test");
+        } else {
+          this.setState({ networkText: '' });
+        };
       });
     }
   }
@@ -95,7 +101,8 @@ class App extends Component {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
     return (
       <div className="App">
-        {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)}
+        <NetworkAlert text={this.state.networkText} />
+        {/* {!navigator.onLine ? (<NetworkAlert text='You are offline, information you are viewing will be out of date. To view updated information, connect to the internet.' />) : (<NetworkAlert text='' />)} */}
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventCount={(e) => this.updateEventCount(e)} />
         <h4>Events in each city</h4>
