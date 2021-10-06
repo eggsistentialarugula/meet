@@ -66,13 +66,13 @@ const EventGenre = ({ events }) => {
         return data;
     };
 
-    // useEffect(() => {
-    //     setData(() => getData());
-    // }, [events]);
-
     useEffect(() => {
-        console.log('test');
-    })
+        setData(() => getData());
+    }, [events]);
+
+    // useEffect(() => {
+    //     console.log('test');
+    // })
 
     const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
