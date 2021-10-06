@@ -6,10 +6,6 @@ import {
 const EventGenre = ({ events }) => {
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        setData(() => getData());
-    }, [events]);
-
     const getData = () => {
         const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
         const data = genres.map((genre) => {
@@ -18,6 +14,10 @@ const EventGenre = ({ events }) => {
         });
         return data;
     };
+
+    useEffect(() => {
+        setData(() => getData());
+    }, [events]);
 
     const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
