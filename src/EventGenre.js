@@ -58,6 +58,11 @@ const EventGenre = ({ events }) => {
     const [data, setData] = useState([]);
     const colors = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
+    useEffect(() => {
+        setData(() => getData());
+        console.log("test4");
+    }, [events]);
+
     const getData = () => {
         const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
         const data = genres.map((genre) => {
@@ -66,11 +71,6 @@ const EventGenre = ({ events }) => {
         });
         return data;
     };
-
-    useEffect(() => {
-        setData(() => getData());
-        console.log("test3");
-    }, [events]);
 
     // useEffect(() => {
     //     console.log('test');
