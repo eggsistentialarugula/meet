@@ -20,11 +20,8 @@ const EventGenre = ({ events }) => {
     // }, [events]);
 
     useEffect(() => {
-        console.log('test');
-        console.log('test');
-        console.log('test');
-        console.log('test');
-        console.log('test');
+        setData(() => getData());
+        console.log(setData);
     })
 
     const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
