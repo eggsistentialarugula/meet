@@ -60,7 +60,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
-        console.log("testest");
+        console.log("testing 2");
     }, [events]);
 
 
@@ -74,7 +74,7 @@ const EventGenre = ({ events }) => {
     };
 
     return (
-        <ResponsiveContainer height={400}>
+        <ResponsiveContainer height={400} >
             <PieChart>
                 <Pie
                     data={data}
@@ -89,8 +89,8 @@ const EventGenre = ({ events }) => {
                         data.map((entry, index) => (
                             <Cell
                                 key={`cell-${index}`}
-                                fill={colors[index % colors.length]}
-                                name={entry.name} />
+                                fill={colors[index]}
+                            />
                         ))
                     }
                 </Pie>
