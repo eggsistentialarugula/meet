@@ -56,7 +56,7 @@ import {
 
 const EventGenre = ({ events }) => {
     const [data, setData] = useState([]);
-    const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
+    const colors = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
     useEffect(() => {
         setData(() => getData());
@@ -90,7 +90,7 @@ const EventGenre = ({ events }) => {
                         data.map((entry, index) => (
                             <Cell
                                 key={`cell-${index}`}
-                                fill={COLORS[index % COLORS.length]}
+                                fill={colors[index % colors.length]}
                                 name={entry.name} />
                         ))
                     }
