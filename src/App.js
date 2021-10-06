@@ -21,22 +21,6 @@ class App extends Component {
     showWelcomeScreen: undefined
   }
 
-  // async componentDidMount() {
-  //   this.mounted = true;
-  //   const accessToken = localStorage.getItem('access_token');
-  //   const isTokenValid = (await checkToken(accessToken)).error ? false : true;
-  //   const searchParams = new URLSearchParams(window.location.search);
-  //   const code = searchParams.get("code");
-  //   this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-  //   if ((code || isTokenValid) && this.mounted) {
-  //     getEvents().then((events) => {
-  //       if (this.mounted) {
-  //         this.setState({ events, locations: extractLocations(events) });
-  //       }
-  //     });
-  //   }
-  // }
-
   async componentDidMount() {
     this.mounted = true;
     const accessToken = localStorage.getItem('access_token');
@@ -47,10 +31,7 @@ class App extends Component {
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
-          this.setState({
-            events: events.slice(0, this.state.numberOfEvents),
-            locations: extractLocations(events)
-          });
+          this.setState({ events, locations: extractLocations(events) });
         }
       });
     }
@@ -60,47 +41,26 @@ class App extends Component {
     this.mounted = false;
   }
 
-  // updateEvents = (location, eventCount) => {
-  //   getEvents().then((events) => {
-  //     let locationEvents = (location === 'all') ?
-  //       events :
-  //       events.filter((event) => event.location === location);
-  //     locationEvents = locationEvents.slice(0, eventCount)
-  //     this.setState({
-  //       events: locationEvents,
-  //       currentLocation: location
-  //     });
-  //   });
-  // }
-
-  // updateEventCount = (eventCount) => {
-  //   this.setState({
-  //     numberOfEvents: eventCount
-  //   });
-  //   const { currentLocation } = this.state;
-  //   this.updateEvents(currentLocation, eventCount);
-  // };
-
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
+      let locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      const { numberOfEvents } = this.state;
+      locationEvents = locationEvents.slice(0, eventCount)
       this.setState({
-        events: locationEvents.slice(0, numberOfEvents)
+        events: locationEvents,
+        currentLocation: location
       });
     });
   }
 
   updateEventCount = (eventCount) => {
-    const { currentLocation } = this.state;
     this.setState({
       numberOfEvents: eventCount
     });
+    const { currentLocation } = this.state;
     this.updateEvents(currentLocation, eventCount);
-  }
-
+  };
 
   getData = () => {
     const { locations, events } = this.state;
