@@ -21,7 +21,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
-        console.log(setData);
+        console.log({ setData });
     })
 
     const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
