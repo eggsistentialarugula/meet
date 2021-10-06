@@ -39,6 +39,7 @@ const EventGenre = ({ events }) => {
                             <Cell
                                 key={`cell-${index}`}
                                 fill={colors[index]}
+                            />
                         ))
                     }
                 </Pie>
