@@ -75,7 +75,7 @@ const EventGenre = ({ events }) => {
     //     console.log('test');
     // })
 
-    const COLORS = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
+    const colors = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
     return (
         <ResponsiveContainer width="100%" height="100%">
@@ -93,8 +93,8 @@ const EventGenre = ({ events }) => {
                         data.map((entry, index) => (
                             <Cell
                                 key={`cell-${index}`}
-                                fill={COLORS[index % COLORS.length]}
-                                name={entry.name} />
+                                fill={colors[index]}
+                            />
                         ))
                     }
                 </Pie>
@@ -103,3 +103,12 @@ const EventGenre = ({ events }) => {
     )
 }
 export default EventGenre;
+
+//                     {
+//                         data.map((entry, index) => (
+//                             <Cell
+//                                 key={`cell-${index}`}
+//                                 fill={colors[index]}
+//                             />
+//                         ))
+//                     }
