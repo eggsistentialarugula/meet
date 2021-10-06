@@ -56,6 +56,7 @@ import {
 
 const EventGenre = ({ events }) => {
     const [data, setData] = useState([]);
+    const colors = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
 
     const getData = () => {
         const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
@@ -68,15 +69,12 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
-        console.log("test2");
+        console.log("test3");
     }, [events]);
 
     // useEffect(() => {
     //     console.log('test');
     // })
-
-    const colors = ['#ffcf4d', '#f288e8', '#b391ff', '#879cff', '#66ffe3'];
-
     return (
         <ResponsiveContainer width="100%" height="100%">
             <PieChart width={400} height={400}>
