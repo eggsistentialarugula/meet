@@ -9,6 +9,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
+        console.log(test);
     }, [events]);
 
 
