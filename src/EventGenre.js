@@ -68,6 +68,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
+        console.log("test1");
     }, [events]);
 
     // useEffect(() => {
