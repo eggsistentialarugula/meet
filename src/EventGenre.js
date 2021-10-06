@@ -9,7 +9,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
-        console.log("test 7");
+        console.log("test 8");
     }, [events]);
 
     const getData = () => {
@@ -23,7 +23,7 @@ const EventGenre = ({ events }) => {
 
     return (
         <ResponsiveContainer height={400}>
-            <PieChart width={400} height={400}>
+            <PieChart>
                 <Pie
                     data={data}
                     cx={200}
