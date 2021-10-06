@@ -60,7 +60,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => {
         setData(() => getData());
-        console.log("testing 2");
+        console.log("testing line92");
     }, [events]);
 
 
@@ -89,7 +89,7 @@ const EventGenre = ({ events }) => {
                         data.map((entry, index) => (
                             <Cell
                                 key={`cell-${index}`}
-                                fill={colors[index]}
+                                fill={colors[index % colors.length]}
                             />
                         ))
                     }
