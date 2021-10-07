@@ -44,7 +44,7 @@ class CitySearch extends Component {
 
             <div className="CitySearch">
                 <label class="searchCity-title">Search for a</label>
-                <label class="searchCity-title">nearby city</label>
+                <label class="searchCity-title">nearby location</label>
                 <InfoAlert text={this.state.infoText} />
                 <input
                     type="text"
