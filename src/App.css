@@ -257,7 +257,6 @@ button.toggle-button:hover{
 }
 
 .goToTop-btn {
-  font-family: 'Philosopher', sans-serif;
   position: fixed;
   bottom: 65px;
   right: 20px;
@@ -271,7 +270,7 @@ button.toggle-button:hover{
   width: 35px;
 }
 
-.scrollup-btn:hover {
+.goToTop-btn:hover {
   background-color: #e663f1;
   color: aliceblue;
 }
