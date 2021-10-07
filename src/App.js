@@ -91,6 +91,13 @@ class App extends Component {
     return data;
   };
 
+  goToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
     return (
@@ -115,6 +122,7 @@ class App extends Component {
         </div>
 
         <EventList events={this.state.events} />
+        <button className="goToTop-btn" onClick={this.goToTop}>&#8593;</button>
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
       </div>
     );
