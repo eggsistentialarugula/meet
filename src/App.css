@@ -262,7 +262,7 @@ button.toggle-button:hover{
   right: 20px;
   border: none;
   border-radius: 5px;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   background-color: rgb(255, 121, 11);
   color: rgb(181, 255, 255);
   cursor: pointer;
@@ -271,8 +271,8 @@ button.toggle-button:hover{
 }
 
 .goToTop-btn:hover {
-  background-color: #e663f1;
-  color: aliceblue;
+  background-color: #4aee44;
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 500px){
