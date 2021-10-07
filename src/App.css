@@ -36,7 +36,8 @@
   font-family: 'Philosopher', sans-serif;
 }
 .data-vis-wrapper {
-  background-color: rgba(0,0,0,0.1);
+  background: linear-gradient(to right, rgba(23, 8, 33,0.9), rgba(56, 38, 20,0.9));
+  border-radius: 2%;
   display: flex;
   align-items: center;
   flex-direction: column;
