@@ -263,16 +263,16 @@ button.toggle-button:hover{
   border: none;
   border-radius: 5px;
   font-size: 1.5rem;
-  background-color: rgb(255, 121, 11);
-  color: rgb(181, 255, 255);
+  background-color: rgba(23,8,33,.3);
+  color: aliceblue;
   cursor: pointer;
   height: 35px;
   width: 35px;
 }
 
 .goToTop-btn:hover {
-  background-color: #4aee44;
-  color: rgb(0, 0, 0);
+  background-color: rgba(23,8,33,.8);
+  color:azure;
 }
 
 @media (max-width: 500px){

@@ -19,7 +19,7 @@ This app was created using the Behavioral-Driven Development (BDD) and Test-Driv
 * Add an app shortcut to the home screen
 * View a chart showing the number of upcoming events by city
 ***
-## FEATURE 1: FILTER EVENTS BY CITY
+<h4>FEATURE 1: FILTER EVENTS BY CITY</h4>
 ### AS A USER, I SHOULD BE ABLE TO FILTER EVENTS BY CITY SO I CAN SEE A LIST OF EVENTS THAT ARE TAKING PLACE IN THAT CITY
 
 Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.
