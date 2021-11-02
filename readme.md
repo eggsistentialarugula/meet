@@ -145,7 +145,6 @@ Scenario 1: Show a chart with the number of upcoming events in each city.
 * workbox-routing@5.1.4
 * workbox-strategies@5.1.4
 * workbox-streams@5.1.4
-* 
 
 * @wojtekmaj/enzyme-adapter-react-17@0.6.3
 * enzyme@3.11.0
