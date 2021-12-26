@@ -1,6 +1,10 @@
 # meet app
 
-[Link to the project](https://eggsistentialarugula.github.io/meet/)
+<h3>Demo</h3>
+
+https://user-images.githubusercontent.com/69954816/147399660-aedf4dad-d09a-4e5f-847e-babf7acdc6af.mp4
+
+[Link to live preview](https://eggsistentialarugula.github.io/meet/)
 
 ### Quick Access
 
